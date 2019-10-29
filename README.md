@@ -1,0 +1,2 @@
+# PikabuFacesAggregator
+Pikabu Faces Aggregator
