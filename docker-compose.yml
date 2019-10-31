@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  db:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+
+  parser:
+    build: ./parser
+    depends_on:
+      - db
