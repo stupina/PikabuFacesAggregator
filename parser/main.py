@@ -9,5 +9,6 @@ LOADING_FROM_WEBSITE_PERIOD_SEC = LOADING_FROM_WEBSITE_PERIOD_MIN * 60
 
 if __name__ == '__main__':
     while True:
+        print("KOKO")
         run_website_parser()
         time.sleep(LOADING_FROM_WEBSITE_PERIOD_SEC)
