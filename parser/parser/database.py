@@ -8,8 +8,8 @@ db = client.test_database
 posts = db.posts
 
 
-def create_pikabu_post(title, images_paths, author,
-                       external_id, external_create_date):
+def create_pikabu_post(title, images_paths, author, external_id,
+                       external_create_date, post_url):
     """
     Create pikabu post
 
@@ -29,6 +29,7 @@ def create_pikabu_post(title, images_paths, author,
         'author': author,
         'external_id': external_id,
         'external_create_date': external_create_date,
+        'post_url': post_url,
         'date': datetime.datetime.utcnow(),
     }
     post_id = posts.insert_one(post).inserted_id.str
