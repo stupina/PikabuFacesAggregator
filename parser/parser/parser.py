@@ -49,14 +49,14 @@ def create_posts_from_post_with_faces_on_images(articles):
             continue
         images = article.findAll('img', class_='story-image__image')
         images_urls = [image['data-large-image'] for image in images]
-        images_with_faces_urls = get_images_urls_with_faces(images_urls)
-        if images_with_faces_urls:
+        remove_images_without_faces_urls(images_urls)
+        if images_urls:
             images_urls_str = ';'.join(images_urls)
             title_link = article.find('a', class_='story__title-link')
             post_url = title_link['href']
             title = title_link.get_text()
             author = article.find('a', class_='user__nick').get_text()
-            create_pikabu_post(
+            post = create_pikabu_post(
                 title=title,
                 images_urls=images_urls_str,
                 author=author,
@@ -65,7 +65,7 @@ def create_posts_from_post_with_faces_on_images(articles):
             )
 
 
-def get_images_urls_with_faces(images_urls):
+def remove_images_without_faces_urls(images_urls):
     """
     Remove from list of images' urls urls without faces
 
