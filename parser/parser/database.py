@@ -1,9 +1,13 @@
 import datetime
+import os
+
 
 from pymongo import MongoClient
 
 
-client = MongoClient('db', 27017)
+DB_NAME = os.environ['DB_NAME']
+DB_PORT = int(os.environ['DB_PORT'])
+client = MongoClient(DB_NAME, DB_PORT)
 db = client.databse
 posts = db.posts
 
