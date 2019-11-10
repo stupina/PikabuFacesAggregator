@@ -9,11 +9,15 @@ services:
 
   parser:
     build: ./parser
+    env_file:
+      - env_file
     depends_on:
       - db
 
   api:
     build: ./api
+    env_file:
+      - env_file
     depends_on:
       - db
       - parser
