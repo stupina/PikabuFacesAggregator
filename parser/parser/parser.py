@@ -55,7 +55,7 @@ def create_posts_from_posts_with_faces_on_images(articles):
             post_url = title_link['href']
             title = title_link.get_text()
             author = article.find('a', class_='user__nick').get_text()
-            post = create_pikabu_post(
+            create_pikabu_post(
                 title=title,
                 images_urls=images_urls,
                 author=author,
