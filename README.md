@@ -19,7 +19,7 @@ DB_PORT=db_external_port_from_docker_compose_file
 docker-compose up
 ```
 
-4. Browse to [link](localhost:5000/articles) to see the app in action.
+4. Browse to [link](http://localhost:5000/articles) to see the app in action.
 
 ## Services
 
